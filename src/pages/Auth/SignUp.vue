@@ -82,7 +82,7 @@ async function Register() {
 
     $q.cookies.set('userId', res.userId, {sameSite: 'Strict', secure: true});
     isRegistering.value = false;
-    showEmailVerificationDialog.value = true
+    router.push('/')
 
   // eslint-disable-next-line @typescript-eslint/no-explicit-any
   } catch (error: any) {
@@ -117,7 +117,8 @@ async function Login() {
     if (res.status == 'unverified') {
       $q.cookies.set('userId', res.userId, {sameSite: 'Strict', secure: true});
       isLoggingin.value = false;
-      return showEmailVerificationDialog.value = true
+      // return showEmailVerificationDialog.value = true
+      return router.push('/')
     }
 
     if (res.status == 'success') {

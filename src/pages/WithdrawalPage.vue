@@ -39,7 +39,7 @@ function resetForm() {
 }
 
 async function saveOrder() {
-  if (withdrawForm.amount < 50 || withdrawForm.wallet == '') {
+  if (withdrawForm.amount < 1 || withdrawForm.wallet == '') {
     alert('please fill in the whthdrawal form');
     return false;
   }
